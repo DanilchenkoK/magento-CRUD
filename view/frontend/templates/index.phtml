@@ -1,0 +1,66 @@
+
+<div style="text-align: right; margin-right:60px;"> 
+    <a class="action primary" href="<?= $block->getUrl('cars/index/form');?>"><?=__('Add Car')?></a>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                <?=__('Name')?>
+            </th>        
+            <th>
+                <?=__('Color')?>
+            </th>       
+            <th>
+                <?=__('Engine')?>
+            </th>       
+            <th>
+                <?=__('Body Type')?>
+            </th>        
+            <th>
+                <?=__('Created at')?>
+            </th>       
+            <th>
+                <?=__('Updated at')?>
+            </th>
+            <th>
+                <?=__('Edit')?>
+            </th>
+            <th>
+                <?=__('Delete')?>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php foreach($block->getCollectionCars() as $item):?>
+        <tr>       
+            <td>
+                <?= $item->getData('name');?>
+            </td>
+       
+            <td>
+                <?= $item->getData('color');?>
+            </td>
+        
+            <td>
+                <?= $item->getData('engine');?>
+            </td>
+      
+            <td>
+                <?= $item->getData('body_type');?>
+            </td>
+      
+            <td>
+                <?= $item->getData('created_at');?>
+            </td>
+       
+            <td>
+                <?= $item->getData('updated_at');?>
+            </td>
+            <td><a href="<?= $block->getUrl('cars/index/form', ['id' => $item->getData('id')]);?>" class="action primary"><?=__('Edit')?></a></td>
+            <td><a href="<?= $block->getUrl('cars/index/delete',['id'=>$item->getData('id')]); ?>" class="action primary"><?=__('Delete')?></a></td>
+        </tr>
+    <?php endforeach;?>
+    </tbody>
+</table>

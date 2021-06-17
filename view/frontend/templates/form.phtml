@@ -1,0 +1,17 @@
+<?php $car = $block->getEntity();?>
+<form  class="car-form " action="<?= $block->getUrl('cars/index/save');?>" method="post">
+    <input required class="car-input" type="hidden" value="<?= $car->getData('id')?? null?>"  name="id" >
+    <label class="car-input" for="name"><?=__('Name')?></label>
+    <input required class="car-input" type="text" value="<?= $car->getData('name')?? null?>" id="name"  name="name" placeholder="Name">
+    
+    <label class="car-input" for="color"><?=__('Color')?></label>
+    <input required class="car-input" type="text" value="<?= $car->getData('color')?? null?>" id="color" name="color" placeholder="Color">
+    
+    <label class="car-input" for="engine"><?=__('Engine')?></label>
+    <input required class="car-input" type="text" value="<?= $car->getData('engine')?? null?>" id="engine" name="engine" placeholder="Engine">
+   
+    <label class="car-input" for="body_type"><?=__('Body Type')?></label>
+    <input required class="car-input" type="text" value="<?= $car->getData('body_type')?? null?>" id="body_type" name="body_type" placeholder="Body Type">
+    
+    <button class="action primary"  type="submit"><?=__('Save')?> </button> 
+</form>

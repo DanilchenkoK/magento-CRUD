@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Kirill_FirstModelCar::cars" title="Cars" module="Kirill_FirstModelCar" sortOrder="51" resource="Kirill_FirstModelCar::cars"/>
+        <add id="Kirill_FirstModelCar::car" title="Manage Cars" module="Kirill_FirstModelCar" sortOrder="10" action="cars/index/index" resource="Mageplaza_HelloWorld::cars" parent="Kirill_FirstModelCar::cars"/>     
+    </menu>
+</config>
